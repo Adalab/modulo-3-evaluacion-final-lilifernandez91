@@ -9,7 +9,6 @@ const Filters = (props) => {
       <form>
         <FilterByCharacter />
         <FilterByHouse 
-        filterByHouse={props.filterByHouse}
         handleFilterByHouse={props.handleFilterByHouse}
         />
       </form>
