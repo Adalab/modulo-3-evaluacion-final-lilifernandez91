@@ -16,6 +16,9 @@ import CharacterList from "../components/CharacterList"
 
 function App() {
   const [dataUsers, setDataUsers] = useState([])
+  const [filterByCharacter, setFilterByCharacter] = useState("all")
+  const [filterByHouse, setFilterByHouse] = useState("Gryffindor")
+
 
   useEffect(() => {
     getDataApi().then((data) => {
@@ -23,14 +26,32 @@ function App() {
     })
   }, [])
 
+  const handleFilterByHouse = (value) => {
+setFilterByHouse(value)
+  }
+
+  const userFilters = dataUsers
+  .filter((user)=> {
+    if(filterByHouse === "Gryffindor"){
+      return true
+    } else if (filterByHouse === ""){
+      return "Gryffindor"
+    } else {
+      return user.house === filterByHouse
+    }
+  })
+
   return (
     <div>
       <header>
-          <Filters />  
+          <Filters 
+          filterByHouse={filterByHouse}
+          handleFilterByHouse={handleFilterByHouse}
+          />  
       </header>
 
       <main>
-        <CharacterList characterList={dataUsers}/>
+        <CharacterList characterList={userFilters}/>
       </main>
     </div>
   )
