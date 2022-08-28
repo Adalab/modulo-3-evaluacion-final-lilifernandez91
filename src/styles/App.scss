@@ -1,4 +1,12 @@
-body {
-  background-color: rgb(92, 99, 110)
+@font-face {
+  font-family: 'HarryPotter';
+  src: URL('../../public/fonts/HarryP-MVZ6w.ttf') format('truetype');
 }
+
+body, .select{
+  font-family: 'HarryPotter';
+  background-color: rgb(92, 99, 110);
+}
+
+
 

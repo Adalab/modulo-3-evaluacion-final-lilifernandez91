@@ -9,8 +9,7 @@ const FilterByHouse = (props) => {
       <select
         className="select"
         value={props.filterByHouse}
-        onChange={handleChange}
-      >
+        onChange={handleChange}>
         <option value="Gryffindor">Gryffindor</option>
         <option value="Hufflepuff">Hufflepuff</option>
         <option value="Ravenclaw">Ravenclaw</option>

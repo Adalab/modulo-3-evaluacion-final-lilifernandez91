@@ -6,6 +6,7 @@
   
     h1{
       color: rgb(248, 181, 0);
+      font-size: 70px;
     }
   
     .search-by-character {
@@ -14,7 +15,7 @@
       .label-search {
         margin-right: 22px;
         color: rgb(247, 247, 247);
-        font-size: 21px;
+        font-size: 41px;
       }
   
       .input {
@@ -31,7 +32,7 @@
       .label-select {
         margin-right: 40px;
         color: rgb(247, 247, 247);
-        font-size: 21px;
+        font-size: 41px;
       }
   
       .select {
@@ -39,6 +40,9 @@
           height: 30px;
           border: 2px solid rgb(191, 151, 66);
           background-color: transparent;
+          color:  rgb(247, 247, 247);
+          font-size: 20px;
+          text-transform: uppercase;
         }
     }
   }

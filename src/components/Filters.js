@@ -7,7 +7,9 @@ const Filters = (props) => {
     <div className="div-container-header">
       <h1>Harry Potter</h1>
       <form>
-        <FilterByCharacter />
+        <FilterByCharacter
+        handleFilterByCharacter={props.handleFilterByCharacter}
+        />
         <FilterByHouse 
         handleFilterByHouse={props.handleFilterByHouse}
         />

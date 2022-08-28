@@ -26,22 +26,32 @@ function App() {
 
   const handleFilterByHouse = (value) => {
     setFilterByHouse(value);
+    userFiltered();
   };
 
-  const userFiltersByHouse = dataUsers.filter((user) => {
-    return user.house === filterByHouse;
+  const handleFilterByCharacter = (value) => {
+    setFilterByCharacter(value);
+    userFiltered();
+  };
+
+  const userFiltered = dataUsers
+  .filter((user) => {
+    return user.house === filterByHouse && user.name.toLowerCase().includes(filterByCharacter.toLowerCase());
   });
 
   return (
     <div>
       <header>
         <Filters
-          handleFilterByHouse={handleFilterByHouse}
+          handleFilterByHouse=
+          {handleFilterByHouse}
+          handleFilterByCharacter={handleFilterByCharacter}
         />
       </header>
 
       <main>
-        <CharacterList characterList={userFiltersByHouse} />
+        <CharacterList 
+        characterList= {userFiltered} />
       </main>
     </div>
   );
