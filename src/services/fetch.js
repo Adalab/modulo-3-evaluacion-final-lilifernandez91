@@ -8,8 +8,11 @@ const getDataApi = () => {
         image: user.image,
         name: user.name,
         species: user.species,
-        id: user.dateOfBirth,
-        house: user.house
+        id: user.name.toLowerCase().replace(" ", "-"),
+        house: user.house,
+        alive: user.alive,
+        gender: user.gender,
+        alternate_names: user.alternate_names
       }
     })
     return dataClean

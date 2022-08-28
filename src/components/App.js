@@ -3,15 +3,13 @@ import getDataApi from "../services/fetch";
 import { useEffect, useState } from "react";
 import Filters from "../components/Filters";
 import CharacterList from "../components/CharacterList";
-//import { checkPropTypes } from "prop-types"
-//import { checkPropTypes } from "prop-types"
+import { Route, Routes } from "react-router-dom";
+import CharacterDetail from "../components/CharacterDetail";
+import {useLocation, matchPath} from 'react-router';
 //import { checkPropTypes } from "prop-types"
 //import PropTypes from "prop-types"
-//import {Link, Route, Routes} from 'react-router-dom';
 //import NotFoundPage from './NotFoundPage';
-//import {useLocation, matchPath} from 'react-router';
 //import ls from "../services/localStorage";
-//import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [dataUsers, setDataUsers] = useState([]);
@@ -34,25 +32,49 @@ function App() {
     userFiltered();
   };
 
-  const userFiltered = dataUsers
-  .filter((user) => {
-    return user.house === filterByHouse && user.name.toLowerCase().includes(filterByCharacter.toLowerCase());
+  const userFiltered = dataUsers.filter((user) => {
+    return (
+      user.house === filterByHouse &&
+      user.name.toLowerCase().includes(filterByCharacter.toLowerCase())
+    );
   });
+
+  const {pathname} = useLocation()
+  const dataPath = matchPath("user/:userId", pathname)
+
+  const userId = dataPath !== null ? dataPath.params.userId : null
+  const userFound = dataUsers.find(user => {return user.id === userId})
 
   return (
     <div>
-      <header>
-        <Filters
-          handleFilterByHouse=
-          {handleFilterByHouse}
-          handleFilterByCharacter={handleFilterByCharacter}
-        />
-      </header>
+      <Routes>
+        <Route
+          path="/" 
+          element={
+            <>
+              <header>
+                <Filters
+                  handleFilterByHouse={handleFilterByHouse}
+                  handleFilterByCharacter={handleFilterByCharacter}
+                />
+              </header>
 
-      <main>
-        <CharacterList 
-        characterList= {userFiltered} />
-      </main>
+              <main>
+                <CharacterList characterList={userFiltered} />
+              </main>
+            </>
+          }
+          >
+        </Route>
+
+        <Route
+          path="/user/:userid"
+          element={
+            <CharacterDetail user={userFound}/>
+          }
+          >
+        </Route>
+      </Routes>
     </div>
   );
 }
