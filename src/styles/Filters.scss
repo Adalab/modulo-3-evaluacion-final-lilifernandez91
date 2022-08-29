@@ -1,48 +1,79 @@
 .div-container-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  
-    h1{
-      color: rgb(248, 181, 0);
-      font-size: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .button-reset {
+    position: fixed;
+    top: 37px;
+    right: 53px;
+    width: 117px;
+    height: 44px;
+    border: 2px solid rgb(191, 151, 66);
+    background-color: transparent;
+    color: rgb(247, 247, 247);
+    font-size: 33px;
+    font-family: "HarryPotter";
+
+    @media (max-width: 798px) {
+      top: 11px;
+      right: 11px;
+      width: 80px;
+      height: 33px;
+      font-size: 25px;
     }
-  
+  }
+
+  h1 {
+    color: rgb(248, 181, 0);
+    font-size: 70px;
+  }
+
+  .form-header {
+    @media (max-width: 798px) {
+      text-align: center;
+    }
+
     .search-by-character {
       margin-bottom: 18px;
-  
+
       .label-search {
-        margin-right: 22px;
+        margin-right: 19px;
         color: rgb(247, 247, 247);
         font-size: 41px;
       }
-  
+
       .input {
-        width: 250px;
+        width: 252px;
         height: 28px;
         border: 2px solid rgb(191, 151, 66);
         background-color: transparent;
+        font-family: "HarryPotter";
+        color: rgb(247, 247, 247);
+        font-size: 18px;
+        text-transform: uppercase;
       }
     }
-  
+
     .select-the-house {
       margin-bottom: 18px;
-  
+
       .label-select {
         margin-right: 40px;
         color: rgb(247, 247, 247);
         font-size: 41px;
       }
-  
+
       .select {
-          width: 259px;
-          height: 30px;
-          border: 2px solid rgb(191, 151, 66);
-          background-color: transparent;
-          color:  rgb(247, 247, 247);
-          font-size: 20px;
-          text-transform: uppercase;
-        }
+        width: 262px;
+        height: 30px;
+        border: 2px solid rgb(191, 151, 66);
+        background-color: transparent;
+        color: rgb(247, 247, 247);
+        font-size: 20px;
+        text-transform: uppercase;
+      }
     }
   }
+}

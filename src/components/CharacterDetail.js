@@ -25,7 +25,7 @@ const CharacterDetail = (props) => {
             <div className="div-details">
               <div className="properties">
                 <h3>Nombre: {props.user.name}</h3>
-                <p>Casa: {props.user.house ? "Si" : "No"}</p>
+                <p>Casa: {props.user.house ? props.user.house : "-"}</p>
                 <p>Especie: {props.user.species}</p>
                 <p>Vivo: {props.user.alive ? "si" : "no"}</p>
                 <p>Género: {props.user.gender}</p>

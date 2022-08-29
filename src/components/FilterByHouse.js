@@ -1,5 +1,6 @@
 const FilterByHouse = (props) => {
   const handleChange = (ev) => {
+    // guardar filtro en local strorage
     props.handleFilterByHouse(ev.target.value);
   };
 
