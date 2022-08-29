@@ -1,6 +1,9 @@
+import objectToExport from "../services/localStorage";
+
 const FilterByHouse = (props) => {
   const handleChange = (ev) => {
-    // guardar filtro en local strorage
+    ev.preventDefault()
+    objectToExport.set("filterByHouse", ev.target.value);
     props.handleFilterByHouse(ev.target.value);
   };
 
@@ -10,7 +13,8 @@ const FilterByHouse = (props) => {
       <select
         className="select"
         value={props.filterByHouse}
-        onChange={handleChange}>
+        onChange={handleChange}
+      >
         <option value="Gryffindor">Gryffindor</option>
         <option value="Hufflepuff">Hufflepuff</option>
         <option value="Ravenclaw">Ravenclaw</option>

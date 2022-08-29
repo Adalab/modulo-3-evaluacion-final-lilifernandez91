@@ -9,7 +9,6 @@ import {useLocation, matchPath} from 'react-router';
 //import { checkPropTypes } from "prop-types"
 //import PropTypes from "prop-types"
 //import NotFoundPage from './NotFoundPage';
-//import ls from "../services/localStorage";
 
 function App() {
   const [dataUsers, setDataUsers] = useState([]);
@@ -24,12 +23,10 @@ function App() {
 
   const handleFilterByHouse = (value) => {
     setFilterByHouse(value);
-    userFiltered();
   };
 
   const handleFilterByCharacter = (value) => {
     setFilterByCharacter(value);
-    userFiltered();
   };
 
   const userFiltered = dataUsers.filter((user) => {
@@ -60,7 +57,8 @@ function App() {
               </header>
 
               <main>
-                <CharacterList characterList={userFiltered} />
+                <CharacterList characterList={userFiltered}
+                character={filterByCharacter} />
               </main>
             </>
           }

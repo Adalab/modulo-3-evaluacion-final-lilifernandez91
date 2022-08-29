@@ -17,7 +17,7 @@
     
         .div-details {
           background: rgb(191, 151, 66);
-          height: 172px;
+          height: 206px;
           color: rgb(247, 247, 247);
           padding-left: 15px;
           width: 320px;
@@ -31,6 +31,10 @@
 
           .properties{
             padding-top: 10px;
+
+            .all{
+              margin-top: 4px;
+            }
           }
         }
       }
@@ -42,7 +46,8 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-size: 26px;
+    font-size: 30px;
     color: rgb(247, 247, 247);
+    padding-top: 60px;
 }
 

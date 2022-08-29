@@ -4,20 +4,19 @@
   justify-items: center;
   padding-left: 0;
 
-
-@media (max-width: 798px ) and (min-width: 488px){
+  @media (max-width: 798px) and (min-width: 488px) {
     grid-template-columns: 1fr 1fr;
-}
+  }
 
-@media (max-width: 487px){
+  @media (max-width: 487px) {
     grid-template-columns: 1fr;
-}
+  }
 
   .li-info {
     width: 255px;
     list-style: none;
 
-    .links{
+    .links {
       text-decoration: none;
     }
 
@@ -44,6 +43,18 @@
         text-transform: capitalize;
       }
     }
+  }
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  font-size: 37px;
+  color: rgb(191, 151, 66);
+
+  @media (max-width: 798px) {
+    text-align: center;
   }
 }
 
