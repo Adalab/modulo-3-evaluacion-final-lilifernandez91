@@ -3,7 +3,7 @@ import CharacterCard from "../components/CharacterCard";
 
 const CharacterList = (props) => {
   const userElements = props.characterList.map((item, i) => {
-    return <CharacterCard user={item} key={i} />;
+    return <CharacterCard user={item} key={i} />; 
   });
 
   return (

@@ -5,7 +5,7 @@ import Filters from "../components/Filters";
 import CharacterList from "../components/CharacterList";
 import { Route, Routes } from "react-router-dom";
 import CharacterDetail from "../components/CharacterDetail";
-import {useLocation, matchPath} from 'react-router';
+import { useLocation, matchPath } from "react-router";
 //import { checkPropTypes } from "prop-types"
 //import PropTypes from "prop-types"
 //import NotFoundPage from './NotFoundPage';
@@ -29,49 +29,57 @@ function App() {
     setFilterByCharacter(value);
   };
 
-  const userFiltered = dataUsers.filter((user) => {
+  const userFiltered = dataUsers.sort((a, b) => a.name.localeCompare(b.name)).filter((user) => {
     return (
       user.house === filterByHouse &&
       user.name.toLowerCase().includes(filterByCharacter.toLowerCase())
     );
   });
 
-  const {pathname} = useLocation()
-  const dataPath = matchPath("user/:userId", pathname)
+  const { pathname } = useLocation();
+  const dataPath = matchPath("user/:userId", pathname);
 
-  const userId = dataPath !== null ? dataPath.params.userId : null
-  const userFound = dataUsers.find(user => {return user.id === userId})
+  const userId = dataPath !== null ? dataPath.params.userId : null;
+  const userFound = dataUsers.find((user) => {
+    return user.id === userId;
+  });
+
+  const handleReset = (e) => {
+    setFilterByHouse("Gryffindor");
+    setFilterByCharacter("");
+  };
 
   return (
     <div>
       <Routes>
         <Route
-          path="/" 
+          path="/"
           element={
             <>
               <header>
                 <Filters
                   handleFilterByHouse={handleFilterByHouse}
                   handleFilterByCharacter={handleFilterByCharacter}
+                  handleReset={handleReset}
+                  filterByCharacter={filterByCharacter}
+                  filterByHouse={filterByHouse}
                 />
               </header>
 
               <main>
-                <CharacterList characterList={userFiltered}
-                character={filterByCharacter} />
+                <CharacterList
+                  characterList={userFiltered}
+                  character={filterByCharacter}
+                />
               </main>
             </>
           }
-          >
-        </Route>
+        ></Route>
 
         <Route
           path="/user/:userid"
-          element={
-            <CharacterDetail user={userFound}/>
-          }
-          >
-        </Route>
+          element={<CharacterDetail user={userFound} />}
+        ></Route>
       </Routes>
     </div>
   );

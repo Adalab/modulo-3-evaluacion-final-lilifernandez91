@@ -43,7 +43,7 @@
         color: rgb(247, 247, 247);
         font-size: 41px;
       }
-
+      
       .input {
         width: 252px;
         height: 28px;
@@ -53,6 +53,11 @@
         color: rgb(247, 247, 247);
         font-size: 18px;
         text-transform: uppercase;
+        &:focus{
+          outline: none;
+          border: 2px solid rgb(191, 151, 66);
+          box-shadow: 0 0 10px #719ECE;
+        }
       }
     }
 
@@ -73,6 +78,11 @@
         color: rgb(247, 247, 247);
         font-size: 20px;
         text-transform: uppercase;
+        &:focus{
+          outline: none;
+          border: 2px solid rgb(191, 151, 66);
+          box-shadow: 0 0 10px #719ECE;
+        }
       }
     }
   }
