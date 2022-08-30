@@ -18,11 +18,13 @@ npm start
 
 ```
 
-## Página web con un listado de personajes de la saga Hrry Potter que nos permite filtrar por personaje y por casa.
+## Página web: Listado de personajes de la saga Harry Potter que nos permite filtrar por personaje y por casa.
+
+beta.adalab.es/modulo-3-evaluacion-final-lilifernandez91/
 
 -Cuando arranca la página se mostrarán los personajes de la casa de "Gryffindor". 
 
--Cada usuario estará identificado con foto, nombre y especie.
+-Cada personaje estará identificado con foto, nombre y especie.
 
 -Algunos personajes no tienen foto, por lo que se mostrará una foto por defecto.
 

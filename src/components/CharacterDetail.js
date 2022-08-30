@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 
 const CharacterDetail = (props) => {
   const getAlternativeName = (alternativeNames) => {
-    // if (!alternativeNames || alternativeNames.length === 0) {
-    //   return "-";
-    // }
     const result = alternativeNames.join(", ");
     return result;
   };
