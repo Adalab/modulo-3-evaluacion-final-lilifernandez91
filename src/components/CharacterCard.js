@@ -20,4 +20,12 @@ const CharacterCard = (props) => {
   );
 };
 
+CharacterCard.defaultProps = {
+  user: {
+    name: '',
+    image: '',
+    species: ''
+  }
+}
+
 export default CharacterCard;

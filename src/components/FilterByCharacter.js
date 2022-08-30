@@ -1,4 +1,5 @@
 import objectToExport from "../services/localStorage";
+import PropTypes from 'prop-types';
 
 const FilterByCharacter = (props) => {
   const handleChange = (ev) => {
@@ -23,5 +24,10 @@ const FilterByCharacter = (props) => {
     </div>
   );
 };
+
+FilterByCharacter.propTypes = {
+  handleFilterByCharacter: PropTypes.func.isRequired,
+  filterByCharacter: PropTypes.string.isRequired,
+}
 
 export default FilterByCharacter;

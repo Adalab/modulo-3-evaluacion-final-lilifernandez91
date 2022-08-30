@@ -1,8 +1,9 @@
 import objectToExport from "../services/localStorage";
+import PropTypes from 'prop-types';
 
 const FilterByHouse = (props) => {
   const handleChange = (ev) => {
-    ev.preventDefault()
+    ev.preventDefault();
     objectToExport.set("filterByHouse", ev.target.value);
     props.handleFilterByHouse(ev.target.value);
   };
@@ -15,14 +16,19 @@ const FilterByHouse = (props) => {
         value={props.filterByHouse}
         onChange={handleChange}
       >
-        <option selected={props.filterByHouse === "Gryffindor"} value="Gryffindor">Gryffindor</option>
-        <option selected={props.filterByHouse === "Hufflepuff"} value="Hufflepuff">Hufflepuff</option>
-        <option selected={props.filterByHouse === "Ravenclaw"} value="Ravenclaw">Ravenclaw</option>
-        <option selected={props.filterByHouse === "Slytherin"} value="Slytherin">Slytherin</option>
-        <option selected={props.filterByHouse === ""} value="">No home</option>
+        <option value="Gryffindor">Gryffindor</option>
+        <option value="Hufflepuff">Hufflepuff</option>
+        <option value="Ravenclaw">Ravenclaw</option>
+        <option value="Slytherin">Slytherin</option>
+        <option value="">No home</option>
       </select>
     </div>
   );
+};
+
+FilterByHouse.propTypes = {
+  handleFilterByHouse: PropTypes.func.isRequired,
+  filterByHouse: PropTypes.string.isRequired,
 };
 
 export default FilterByHouse;

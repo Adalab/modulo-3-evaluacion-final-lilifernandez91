@@ -1,5 +1,6 @@
 import "../styles/CharacterList.scss";
 import CharacterCard from "../components/CharacterCard";
+import PropTypes from 'prop-types';
 
 const CharacterList = (props) => {
   const userElements = props.characterList.map((item, i) => {
@@ -17,6 +18,11 @@ const CharacterList = (props) => {
       )}
     </div>
   );
+};
+
+CharacterList.propTypes = {
+  characterList: PropTypes.array.isRequired,
+  character: PropTypes.string.isRequired,
 };
 
 export default CharacterList;

@@ -7,6 +7,7 @@ const CharacterDetail = (props) => {
     const result = alternativeNames.join(", ");
     return result;
   };
+
   return (
     <>
       <section className="section-details">
@@ -35,4 +36,17 @@ const CharacterDetail = (props) => {
     </>
   );
 };
+
+CharacterDetail.defaultProps = {
+  user: {
+    name: '',
+    image: '',
+    house: '',
+    species: '',
+    alive: false,
+    gender: '',
+    alternate_names: ''
+  }
+}
+
 export default CharacterDetail;
