@@ -28,7 +28,7 @@ La página web tiene las siguientes funcionalidades:
 - La página web se puede visualizar en dispositivos móviles, tablets y desktop.
 
 3- Acceso a la página web
-- Puedes acceder a la página web en el siguiente enlace: beta.adalab.es/modulo-3-evaluacion-final-lilifernandez91/
+- Puedes acceder a la página web en el siguiente enlace: https://lilifernandez91.github.io/modulo-3-evaluacion-final-lilifernandez91/
 
 4- Tecnologías utilizadas
 El proyecto ha sido desarrollado utilizando las siguientes tecnologías:
